@@ -1,0 +1,455 @@
+/* Variáveis de cores */
+:root {
+    --bg-color: #000;
+    --card-bg: #1a1a1a;
+    --text-color: #fff;
+    --secondary-text: #a0a0a0;
+    --button-bg: #fff;
+    --button-text: #000;
+    --navbar-bg: rgba(0, 0, 0, 0.8);
+    --navbar-shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Modo Claro */
+.light-mode {
+    --bg-color: #f0f0f0;
+    --card-bg: #fff;
+    --text-color: #000;
+    --secondary-text: #555;
+    --button-bg: #000;
+    --button-text: #fff;
+    --navbar-bg: rgba(255, 255, 255, 0.8);
+    --navbar-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Geral e Reset */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+    margin: 0;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Barra de Navegação */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar-bg);
+    padding: 15px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--navbar-shadow);
+    backdrop-filter: blur(5px); /* Efeito de vidro embaçado */
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-brand {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-socials {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--secondary-text);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#theme-toggle svg {
+    fill: none;
+    stroke: var(--text-color);
+    width: 24px;
+    height: 24px;
+}
+
+/* Conteúdo Principal */
+.intro-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+}
+
+.main-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.button {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 15px 30px;
+    border: 1px solid var(--text-color);
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+.button:hover {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.primary-button:hover {
+    background-color: var(--secondary-text);
+    color: var(--button-bg);
+    border-color: var(--secondary-text);
+}
+
+/* Seção de Contato */
+.contact-section {
+    padding: 80px 20px;
+    background-color: var(--card-bg);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 50px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-text);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--secondary-text);
+}
+
+/* Seção "Sobre mim* */
+.about-me-section {
+    padding: 80px 20px;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.section-tag {
+    background-color: #333;
+    color: #a0a0a0;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 20px 0 10px;
+    color: var(--text-color);
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.card h3 .icon {
+    font-size: 1.8rem;
+    margin-right: 10px;
+}
+
+.card-background {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.card-skills {
+    flex: 1 1 300px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list span {
+    background-color: var(--secondary-text);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/*Projetos*/
+.projects-section {
+    padding: 80px 20px;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+}
+
+.main-footer {
+    background-color: var(--bg-color); /* Alterado para preto */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.footer-column p {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    line-height: 1.5;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--secondary-text);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--text-color);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a svg {
+    fill: none;
+    stroke: var(--secondary-text);
+    transition: stroke 0.3s;
+}
+
+.footer-socials a:hover svg {
+    stroke: var(--text-color);
+}
+
+/* Container que controla a proporção do iframe */
+.figma-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Proporção de aspecto 16:9 (altura/largura) */
+}
+
+/* O iframe preenche todo o espaço do container */
+.figma-embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Seção de Contato */
+.contact-section {
+    padding: 80px 20px;
+    background-color: var(--bg-color); /* Alterado para preto */
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 50px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-text);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--secondary-text);
+}
